@@ -1,28 +1,34 @@
 import { Observable } from 'tns-core-modules/data/observable';
-import * as app from 'tns-core-modules/application';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
+import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
-export class Common extends Observable {
-  public message: string;
+export class RtspPlayer extends Observable {
 
-  constructor() {
+  constructor(args: CreateViewEventData) {
     super();
-    this.message = Utils.SUCCESS_MSG();
   }
 
-  public greet() {
-    return "Hello, NS";
+  public startStream(streamUrl: string) {
+    throw new Error("Method not implemented.");
   }
+
+  public stopStream() {
+    throw new Error("Method not implemented.");
+  }
+
+  public release() {
+    throw new Error("Method not implemented.");
+  }
+
+  public isStreaming(): boolean {
+    throw new Error("Method not implemented.");
+  }
+
 }
 
 export class Utils {
-  public static SUCCESS_MSG(): string {
-    let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}.`;
 
-    setTimeout(() => {
-      dialogs.alert(`${msg} For real. It's really working :)`).then(() => console.log(`Dialog closed.`));
-    }, 2000);
-
-    return msg;
+  public static attachView(args: CreateViewEventData, view: any) {
+    args.view = view;
   }
+
 }

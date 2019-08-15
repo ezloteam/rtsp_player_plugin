@@ -7,6 +7,6 @@
     </ActionBar>
 
     <GridLayout>
-        <!-- Add your page content here -->
+        <Placeholder creatingView="creatingView"/>
     </GridLayout>
 </Page>

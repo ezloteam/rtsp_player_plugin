@@ -1,9 +1,9 @@
-import { AbstractRtspPlayer, Utils } from './rtsp-player.common';
+import { RtspPlayer as RtspPlayerBase, Utils } from './rtsp-player.common';
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 declare var com: any;
 
-export class RtspPlayer extends AbstractRtspPlayer {
+export class RtspPlayer extends RtspPlayerBase {
 
     private playerView: any;
 

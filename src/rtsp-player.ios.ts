@@ -1,12 +1,12 @@
-import { AbstractRtspPlayer } from './rtsp-player.common';
+import { RtspPlayer as RtspPlayerBase } from './rtsp-player.common';
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
-export class RtspPlayer extends AbstractRtspPlayer {
+export class RtspPlayer extends RtspPlayerBase {
 
     constructor(args: CreateViewEventData) {
         super(args);
-    }  
-    
+    }
+
     public startStream(streamUrl: string) {
         throw new Error("Method not implemented.");
     }
@@ -19,7 +19,7 @@ export class RtspPlayer extends AbstractRtspPlayer {
         throw new Error("Method not implemented.");
     }
 
-    public isStreaming() : boolean {
+    public isStreaming(): boolean {
         throw new Error("Method not implemented.");
     }
 

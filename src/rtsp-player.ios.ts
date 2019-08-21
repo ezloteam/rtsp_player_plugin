@@ -1,7 +1,7 @@
-import { AbstractRtspPlayer } from './rtsp-player.common';
+import { RtspPlayer as RtspPlayerBase } from './rtsp-player.common';
 import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
-export class RtspPlayer extends AbstractRtspPlayer {
+export class RtspPlayer extends RtspPlayerBase {
 
     private playerView: any;
 
@@ -26,8 +26,8 @@ export class RtspPlayer extends AbstractRtspPlayer {
         this.playerView.useMemoryWarning();
     }
 
-    public isStreaming() : boolean {
-        return this.playerView.playing;
+    public isStreaming(): boolean {
+        throw new Error("Method not implemented.");
     }
 
 }

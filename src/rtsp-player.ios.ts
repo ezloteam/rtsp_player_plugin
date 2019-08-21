@@ -7,15 +7,12 @@ export class RtspPlayer extends RtspPlayerBase {
 
     constructor(args: CreateViewEventData) {
         super(args);
-
-        //let frame = new CGRect(0,0,200,100);
         this.playerView = new EzloRTSPView();
-        // this.player.frame = frame;
         args.view = this.playerView;
     }
 
     public startStream(streamUrl: string) {
-      this.playerView.startStream("rtsp://admin:admin123@192.168.30.73");
+      this.playerView.startStream(streamUrl);
     }
 
     public stopStream() {
@@ -27,7 +24,7 @@ export class RtspPlayer extends RtspPlayerBase {
     }
 
     public isStreaming(): boolean {
-        throw new Error("Method not implemented.");
+        return this.playerView.playing;
     }
 
 }

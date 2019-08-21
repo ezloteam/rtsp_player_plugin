@@ -8,14 +8,14 @@ export class RtspPlayer extends AbstractRtspPlayer {
     constructor(args: CreateViewEventData) {
         super(args);
 
-        let frame = new CGRect(0,0,200,100);
-        let opts = NSDictionary.alloc();
-        this.playerView = EzloRTSPView.initWithContentPathParametersFrame("rtsp://admin:admin123@192.168.30.73",opts,frame);
+        //let frame = new CGRect(0,0,200,100);
+        this.playerView = new EzloRTSPView();
+        // this.player.frame = frame;
         args.view = this.playerView;
     }
 
     public startStream(streamUrl: string) {
-
+      this.playerView.startStream("rtsp://admin:admin123@192.168.30.73");
     }
 
     public stopStream() {

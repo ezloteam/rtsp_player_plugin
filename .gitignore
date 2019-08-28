@@ -2,7 +2,7 @@
 .idea
 .DS_Store
 *.esm.json
-*.js
+src/**/*.js
 *.js.map
 *.log
 src/*.d.ts

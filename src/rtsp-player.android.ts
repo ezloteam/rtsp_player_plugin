@@ -11,7 +11,7 @@ export class RtspPlayer extends RtspPlayerBase {
         super(args);
 
         this.playerView = this.createPlayerView(args.context);
-        Utils.attachView(args, this.playerView);
+        args.view = this.playerView;
     }
 
     private createPlayerView(context: any) {

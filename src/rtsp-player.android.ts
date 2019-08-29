@@ -7,11 +7,10 @@ export class RtspPlayer extends RtspPlayerBase {
 
     private playerView: any;
 
-    constructor(args: CreateViewEventData) {
-        super(args);
+    constructor(context: any) {
+        super(context);
 
-        this.playerView = this.createPlayerView(args.context);
-        args.view = this.playerView;
+        this.playerView = this.createPlayerView(context);
     }
 
     private createPlayerView(context: any) {
@@ -28,6 +27,10 @@ export class RtspPlayer extends RtspPlayerBase {
 
     public release() {
         this.playerView.release();
+    }
+
+    public getView() : any {
+        return this.playerView;
     }
 
     public isStreaming() : boolean {

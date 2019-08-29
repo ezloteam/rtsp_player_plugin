@@ -5,10 +5,9 @@ export class RtspPlayer extends RtspPlayerBase {
 
     private playerView: any;
 
-    constructor(args: CreateViewEventData) {
-        super(args);
+    constructor(context: any) {
+        super(context);
         this.playerView = new EzloRTSPView();
-        args.view = this.playerView;
     }
 
     public startStream(streamUrl: string) {
@@ -21,6 +20,10 @@ export class RtspPlayer extends RtspPlayerBase {
 
     public release() {
         this.playerView.useMemoryWarning();
+    }
+
+    public getView() : any {
+        return this.playerView;
     }
 
     public isStreaming(): boolean {

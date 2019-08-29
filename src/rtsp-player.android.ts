@@ -1,5 +1,4 @@
-import { RtspPlayer as RtspPlayerBase, Utils } from './rtsp-player.common';
-import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
+import { RtspPlayer as RtspPlayerBase } from './rtsp-player.common';
 
 declare var com: any;
 
@@ -29,11 +28,11 @@ export class RtspPlayer extends RtspPlayerBase {
         this.playerView.release();
     }
 
-    public getView() : any {
+    public getView(): any {
         return this.playerView;
     }
 
-    public isStreaming() : boolean {
+    public isStreaming(): boolean {
         return this.playerView.isStreaming();
     }
 

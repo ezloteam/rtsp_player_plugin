@@ -1,5 +1,4 @@
 import { RtspPlayer as RtspPlayerBase } from './rtsp-player.common';
-import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 export class RtspPlayer extends RtspPlayerBase {
 
@@ -22,7 +21,7 @@ export class RtspPlayer extends RtspPlayerBase {
         this.playerView.useMemoryWarning();
     }
 
-    public getView() : any {
+    public getView(): any {
         return this.playerView;
     }
 

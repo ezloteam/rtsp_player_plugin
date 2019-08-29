@@ -12,8 +12,9 @@
   export default {
     methods: {
       creatingView: function (args) {
-        let player = new RtspPlayer(args);
+        let player = new RtspPlayer(args.context);
         player.startStream("rtsp://admin:admin123@192.168.30.74");
+        args.view = player.getView();
       }
     }
   }

@@ -17,6 +17,6 @@ export function onNavigatingTo(args: NavigatedData) {
 }
 
 export function creatingView(args: CreateViewEventData) {
-    let player = new RtspPlayer(args);
+    let player = new RtspPlayer(args.context);
     player.startStream("rtsp://admin:admin123@192.168.30.74");
 }

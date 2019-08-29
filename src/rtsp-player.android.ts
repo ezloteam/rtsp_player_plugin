@@ -1,5 +1,4 @@
-import { RtspPlayer as RtspPlayerBase, Utils } from './rtsp-player.common';
-import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
+import { RtspPlayer as RtspPlayerBase } from './rtsp-player.common';
 
 declare var com: any;
 
@@ -7,11 +6,10 @@ export class RtspPlayer extends RtspPlayerBase {
 
     private playerView: any;
 
-    constructor(args: CreateViewEventData) {
-        super(args);
+    constructor(context: any) {
+        super(context);
 
-        this.playerView = this.createPlayerView(args.context);
-        Utils.attachView(args, this.playerView);
+        this.playerView = this.createPlayerView(context);
     }
 
     private createPlayerView(context: any) {
@@ -30,7 +28,11 @@ export class RtspPlayer extends RtspPlayerBase {
         this.playerView.release();
     }
 
-    public isStreaming() : boolean {
+    public getView(): any {
+        return this.playerView;
+    }
+
+    public isStreaming(): boolean {
         return this.playerView.isStreaming();
     }
 

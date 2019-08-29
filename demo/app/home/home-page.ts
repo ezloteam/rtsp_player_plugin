@@ -8,7 +8,6 @@ logic, and to set up your page’s data binding.
 
 import { NavigatedData, Page } from "tns-core-modules/ui/page";
 import { HomeViewModel } from "./home-view-model";
-import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 export function onNavigatingTo(args: NavigatedData) {
     const page = <Page>args.object;
@@ -16,7 +15,8 @@ export function onNavigatingTo(args: NavigatedData) {
     page.bindingContext = new HomeViewModel();
 }
 
-export function creatingView(args: CreateViewEventData) {
-    let player = new RtspPlayer(args);
+export function creatingView(args: any) {
+    let player = new RtspPlayer(args.context);
     player.startStream("rtsp://admin:admin123@192.168.30.74");
+    args.view = player.getView();
 }
